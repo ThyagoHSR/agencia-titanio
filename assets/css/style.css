@@ -1,0 +1,261 @@
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  /* Cores */
+  --brand-gold: #ED9B27;
+  --txt: #fff;
+  --btn-blue: #2843E5;
+  --background-body: #241725;
+
+  /* Fontes */
+  --font-exo: "Exo", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-body);
+  overflow-x: hidden;
+}
+
+/* Section Form */
+
+.title{
+  color: var(--txt);
+  font-family: var(--font-exo);
+  font-size: 4em;
+}
+
+.text{
+  color: var(--txt);
+  font-family: var(--font-open-sans);
+  font-size: 1.25rem;
+  max-width: 34rem;
+}
+
+.underline{
+  color:var(--brand-gold);
+  max-width: 34.375rem;
+  width:100%;
+}
+
+.pb-6 {
+  padding-bottom: 7.1875rem !important;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  max-width: 34.375rem;
+  height: 19.375rem;
+  border: none;
+  box-shadow: 0 0 1.25rem rgba(0,0,0,0.4);
+}
+
+.form-section {
+  position: relative;
+}
+
+.form-card {
+  position: relative;
+  z-index: 9999;
+  background: linear-gradient(
+    180deg,
+    rgba(67, 59, 105, 0.85) 0%,
+    rgba(57, 57, 94, 0.85) 100%
+  );
+  border-radius: 0.625rem;
+  max-width: 28.438rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(0.375rem);
+}
+
+.triangulo {
+  position: relative;
+  z-index: 0;
+}
+
+.triangulo::after {
+  content: "";
+  position: absolute;
+  top: -42%;
+  right: -24%;
+  width: 37.5rem;
+  height: 37.5rem;
+  background: url("/assets/img/elements/triangulos.png") no-repeat center/contain;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+/* Triângulo responsivo */
+@media (max-width: 1399px) {
+.triangulo::after {
+  top: -42%;
+  right: -27%;
+}
+}
+
+@media (max-width: 1199px) {
+.triangulo::after {
+  top: -42%;
+  right: -32%;
+}
+}
+
+@media (max-width: 991px) {
+.triangulo::after {
+  top: -170%;
+  right: -9%;
+}
+}
+
+@media (max-width: 767px) {
+.triangulo::after {
+  top: -157%;
+  right: -7.5%;
+  width: 18.75rem;
+  height: 25rem;
+}
+}
+
+@media (max-width: 667px) {
+.triangulo::after {
+  top: -150%;
+  right: 0;
+}
+}
+
+.form-label {
+  color: var(--brand-gold);
+  font-size: 1rem;
+  font-family: var(--font-open-sans);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.125rem solid var(--brand-gold);
+  border-radius: 0;
+  color: var(--txt);
+  font-size: 0.875rem;
+  padding-left: 0;
+  font-style: italic;
+  font-family: var(--font-open-sans);
+  transition: border-color 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: var(--txt);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.form-control:focus {
+  background-color: transparent !important;
+  border: none;
+  border-bottom: 0.125rem solid var(--brand-gold) !important;
+  color: var(--txt) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.btn-primary {
+  max-width: 18.75rem;
+  width:100%;
+  background-color: var(--btn-blue);
+  border: none;
+  border-radius: 3.125rem;
+  font-family: var(--font-exo);
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 0.688rem 3.938rem;
+  transition: all 0.3s ease;
+  color: var(--txt);
+  box-shadow: 0 0 1.875rem rgba(169, 63, 164, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: #A93FA4;
+  box-shadow: none;
+}
+
+/* Footer */
+
+.footer{
+  padding-top: 6.56rem;
+  padding-bottom: 6.56rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.contact-number{
+  color: var(--txt);
+  font-family: var(--font-exo);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* Responsivo */
+
+@media (max-width: 991px ){
+
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.form-section {
+  position: relative;
+  margin-top: 5rem;
+}
+
+}
+
+@media (max-width: 767px) {
+
+.form-card {
+    padding: 1.5rem 1.25rem;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem 0;
+}
+
+.title {
+  font-size: 3rem;
+  margin-right: auto;
+}
+
+.form-section {
+  position: relative;
+  margin-top: 0;
+}
+
+}
+
+@media (max-width: 667px) {
+  .title {
+  font-size: 2rem;
+  margin-right: auto;
+}
+}
