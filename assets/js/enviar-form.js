@@ -4,7 +4,7 @@ $(document).ready(function () {
   $("#form-contact").on("submit", function (e) {
     e.preventDefault();
 
-    if (!$(this).valid()) return; // Se inválido, não envia
+    if (!$(this).valid()) return;
 
     $.ajax({
       type: "POST",
@@ -14,9 +14,9 @@ $(document).ready(function () {
       success: function (response) {
         if (response.status === "success") {
           $(".form-card").html(`
-            <div class="text-center p-4">
-              <h4>✅ Enviado com sucesso!</h4>
-              <p>Obrigado pelo interesse. Entraremos em contato em breve.</p>
+            <div class="text-center p-4 text-white sucess-text">
+              <h4>Enviado com sucesso!</h4>
+              <p>Obrigado pelo interesse. <br>Entraremos em contato em breve.</p>
             </div>
           `);
         } else {

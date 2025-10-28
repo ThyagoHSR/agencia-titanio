@@ -83,6 +83,10 @@ body {
   backdrop-filter: blur(0.375rem);
 }
 
+.sucess-text{
+  font-family: var(--font-open-sans);
+}
+
 .triangulo {
   position: relative;
 }

@@ -1,6 +1,8 @@
 <?php
 include("conexao.php");
 
+header('Content-Type: application/json');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $conn->real_escape_string($_POST['nome']);
     $email = $conn->real_escape_string($_POST['email']);
@@ -11,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$nome', '$email', '$telefone', '$empresa')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "success";
+        echo json_encode(["status" => "success"]);
     } else {
-        echo "error";
+        echo json_encode(["status" => "error", "message" => $conn->error]);
     }
 
     $conn->close();
